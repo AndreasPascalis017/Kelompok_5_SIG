@@ -1,0 +1,1558 @@
+{
+    "type": "FeatureCollection",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+        }
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA NEGERI 12 BANDAR LAMPUNG",
+                "st_name": null,
+                "ph_number": null,
+                "Jenis": 1,
+                "Pemilik": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.31034000029183,
+                    -5.3780199998223
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMK 2 MEI",
+                "st_name": null,
+                "ph_number": null,
+                "Jenis": 2,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.24302999983563,
+                    -5.374409999720918
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMU TAMAN SISWA TELUK BETUNG",
+                "st_name": "JALAN LETJEN SUPRAPTO",
+                "ph_number": null,
+                "Jenis": 4,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.25554000027181,
+                    -5.415809999630995
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMK PENERBANGAN LAMPUNG",
+                "st_name": "JALAN SULTAN AGUNG",
+                "ph_number": null,
+                "Jenis": 2,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.26648000025283,
+                    -5.380720000227021
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA XAVERIUS 1",
+                "st_name": "JALAN SULTAN HASANUDDIN",
+                "ph_number": null,
+                "Jenis": 1,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.26667999958336,
+                    -5.44197000001469
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA DIRGANTARA",
+                "st_name": "GANG MULYASARI",
+                "ph_number": null,
+                "Jenis": 1,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.27009000035429,
+                    -5.408249999936753
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA NEGERI 7 BANDAR LAMPUNG",
+                "st_name": "JALAN HANOMAN",
+                "ph_number": "721-271180",
+                "Jenis": 1,
+                "Pemilik": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.20115999983517,
+                    -5.403610000000707
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMK PENERBANGAN RADIN INTEN",
+                "st_name": null,
+                "ph_number": null,
+                "Jenis": 2,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.27861000025234,
+                    -5.382859999988226
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA YADIKA LAMPUNG",
+                "st_name": "JALAN RAJA TIHANG",
+                "ph_number": null,
+                "Jenis": 1,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.28015000022339,
+                    -5.362399999859301
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA NEGERI 4 BANDAR LAMPUNG",
+                "st_name": "JALAN CIPTO MANGUNKUSUMO",
+                "ph_number": null,
+                "Jenis": 1,
+                "Pemilik": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.27011000037724,
+                    -5.435380000086136
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA NEGERI 15 BANDAR LAMPUNG",
+                "st_name": "GANG TURI RAYA",
+                "ph_number": null,
+                "Jenis": 1,
+                "Pemilik": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.26829000008445,
+                    -5.360750000211518
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA NEGERI 9 BANDAR LAMPUNG",
+                "st_name": null,
+                "ph_number": "721-772924",
+                "Jenis": 1,
+                "Pemilik": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.24930000029582,
+                    -5.390100000214035
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMK YP 57",
+                "st_name": "JALAN RATU DIBALAU",
+                "ph_number": null,
+                "Jenis": 2,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.28604000024681,
+                    -5.357969999714906
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA YP 57",
+                "st_name": "JALAN RATU DIBALAU",
+                "ph_number": null,
+                "Jenis": 1,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.28604000024681,
+                    -5.357969999714906
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA PANGUDI LUHUR",
+                "st_name": "JALAN SOEKARNO-HATTA",
+                "ph_number": null,
+                "Jenis": 1,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.25491999955938,
+                    -5.35962000026201
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMK BANDAR LAMPUNG",
+                "st_name": "JALAN JENDERAL SUDIRMAN",
+                "ph_number": null,
+                "Jenis": 2,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.26576999988661,
+                    -5.42265000029648
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA 5 OKTOBER",
+                "st_name": "GANG ANGGREK",
+                "ph_number": null,
+                "Jenis": 1,
+                "Pemilik": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.2507899997597,
+                    -5.397630000323437
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA NEGERI 14 BANDAR LAMPUNG",
+                "st_name": null,
+                "ph_number": null,
+                "Jenis": 1,
+                "Pemilik": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.21174000030179,
+                    -5.379719999977223
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA NEGERI 06 BANDAR LAMPUNG",
+                "st_name": "JALAN CHAIRIL ANWAR",
+                "ph_number": null,
+                "Jenis": 1,
+                "Pemilik": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.24425999990012,
+                    -5.419339999640449
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA PERINTIS 2",
+                "st_name": "JALAN CHAIRIL ANWAR",
+                "ph_number": null,
+                "Jenis": 1,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.24600000010093,
+                    -5.417919999807348
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA AL KAUSAR",
+                "st_name": "JALAN PERWIRA",
+                "ph_number": null,
+                "Jenis": 1,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.23898999968974,
+                    -5.361329999978692
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "LEMBAGA PENDIDIKAN KHARISMA",
+                "st_name": "JALAN LETJEN SUPRAPTO",
+                "ph_number": null,
+                "Jenis": 4,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.25488999997457,
+                    -5.4199099998458
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA NEGERI 2 BANDAR LAMPUNG",
+                "st_name": null,
+                "ph_number": null,
+                "Jenis": 1,
+                "Pemilik": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.25478999985967,
+                    -5.426029999683924
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMK TARUNA",
+                "st_name": "JALAN PULAU LEGUNDI",
+                "ph_number": null,
+                "Jenis": 2,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.2965799997682,
+                    -5.394470000289467
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMK TAMAN KARYA MADYA TEKNIK",
+                "st_name": "JALAN W R SUPRATMAN",
+                "ph_number": "721-488570",
+                "Jenis": 2,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.25911999988908,
+                    -5.44556000009312
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA NEGERI 12 BANDAR LAMPUNG",
+                "st_name": null,
+                "ph_number": null,
+                "Jenis": 1,
+                "Pemilik": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.31040999992256,
+                    -5.375550000131569
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA NEGERI 11 BANDAR LAMPUNG",
+                "st_name": "JALAN AHMAD DAHLAN",
+                "ph_number": null,
+                "Jenis": 1,
+                "Pemilik": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.24438999959982,
+                    -5.47166000040789
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMK NEGERI 3 LAMPUNG",
+                "st_name": "JALAN CUT MEUTIA",
+                "ph_number": null,
+                "Jenis": 2,
+                "Pemilik": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.26041000002256,
+                    -5.434510000435356
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMK SAMUDRA",
+                "st_name": null,
+                "ph_number": null,
+                "Jenis": 2,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.26022000025385,
+                    -5.439329999678944
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMU ISLAMIYAH",
+                "st_name": "JALAN LAKSAMANA MALAHAYATI",
+                "ph_number": "721-485013",
+                "Jenis": 4,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.2632099996428,
+                    -5.449780000445863
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA NEGERI 8 BANDAR LAMPUNG",
+                "st_name": null,
+                "ph_number": "721-484453",
+                "Jenis": 1,
+                "Pemilik": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.25794999989363,
+                    -5.449600000239013
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "MA AL-HIKMAH",
+                "st_name": null,
+                "ph_number": null,
+                "Jenis": 3,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.26693000032033,
+                    -5.382479999551561
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA IMMANUEL",
+                "st_name": "JALAN DR SUSILO",
+                "ph_number": "721-256948",
+                "Jenis": 1,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.26396000005501,
+                    -5.429349999901778
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMU TAMAN SISWA",
+                "st_name": "JALAN W R SUPRATMAN",
+                "ph_number": null,
+                "Jenis": 4,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.26611000027731,
+                    -5.444929999818844
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA BHAKTI UTAMA",
+                "st_name": "JALAN PANGLIMA POLIM",
+                "ph_number": "721-704503",
+                "Jenis": 1,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.24934999990359,
+                    -5.386980000225998
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMK PELAYARAN SATRIA BAHARI",
+                "st_name": "JALAN PEMUKA",
+                "ph_number": "721-707848",
+                "Jenis": 2,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.27451999959935,
+                    -5.390969999864803
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA SURYA DHARMA 2",
+                "st_name": null,
+                "ph_number": null,
+                "Jenis": 1,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.26724999978869,
+                    -5.383889999822826
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA SURYA DHARMA 1",
+                "st_name": null,
+                "ph_number": null,
+                "Jenis": 1,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.26724999978869,
+                    -5.383889999822826
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMK SURYA DHARMA",
+                "st_name": null,
+                "ph_number": null,
+                "Jenis": 2,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.26724999978869,
+                    -5.383889999822826
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMK BINA MULYA",
+                "st_name": null,
+                "ph_number": null,
+                "Jenis": 2,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.25484000036676,
+                    -5.395279999871259
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMK DHARMA UTAMA",
+                "st_name": "JALAN PERUMAHAN POLRI PADAT KARYA",
+                "ph_number": "721-707864",
+                "Jenis": 2,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.24589999998601,
+                    -5.354169999844825
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMK GAJAH MADA",
+                "st_name": null,
+                "ph_number": null,
+                "Jenis": 2,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.27691000009746,
+                    -5.372530000258516
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMK BHINNEKA BANDAR LAMPUNG",
+                "st_name": "JALAN PELITA BARU",
+                "ph_number": null,
+                "Jenis": 2,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.25827999982317,
+                    -5.379559999793353
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "STMIK TUNAS BANGSA",
+                "st_name": "JALAN TEUKU UMAR",
+                "ph_number": "721-470661",
+                "Jenis": 4,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.25907999984314,
+                    -5.382719999827322
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "STMIK TEKNOKRAT",
+                "st_name": "JALAN TEUKU UMAR",
+                "ph_number": "721-702022",
+                "Jenis": 4,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.25796000035479,
+                    -5.38210000001419
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA GAJAH MADA",
+                "st_name": null,
+                "ph_number": null,
+                "Jenis": 1,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.27691000009746,
+                    -5.372530000258516
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA MUTIARA",
+                "st_name": "JALAN RATU DIBALAU",
+                "ph_number": null,
+                "Jenis": 1,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.27845000006845,
+                    -5.362729999788814
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "MA AL-ASYARIYAH PANJANG",
+                "st_name": "JALAN TELUK AMBON",
+                "ph_number": "721-31041",
+                "Jenis": 3,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.32060000039074,
+                    -5.462780000096133
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA NEGERI SETARA",
+                "st_name": "JALAN KAPTEN ABDULLAH HAK",
+                "ph_number": null,
+                "Jenis": 1,
+                "Pemilik": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.23557000025635,
+                    -5.360349999751874
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA YP UNILA",
+                "st_name": "JALAN LETJEN SUPRAPTO",
+                "ph_number": "721-254502",
+                "Jenis": 1,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.25589999978621,
+                    -5.415060000118115
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMK NEGERI 3 BANDAR LAMPUNG",
+                "st_name": "JALAN CUT MEUTIA",
+                "ph_number": null,
+                "Jenis": 2,
+                "Pemilik": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.2618499998786,
+                    -5.434040000344913
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMK DHARMAPALA",
+                "st_name": "JALAN DARMAPALA",
+                "ph_number": null,
+                "Jenis": 2,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.32454999998356,
+                    -5.483900000084136
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA FRANSISKUS",
+                "st_name": "JALAN BUMI MANTI 2",
+                "ph_number": null,
+                "Jenis": 1,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.2509800004277,
+                    -5.37329000023254
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA XAVERIUS",
+                "st_name": "JALAN CENDANA",
+                "ph_number": null,
+                "Jenis": 1,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.26821999955438,
+                    -5.42522000010212
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMK YAPENA",
+                "st_name": "JALAN GAJAH MADA",
+                "ph_number": "721-256864",
+                "Jenis": 2,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.26722999976573,
+                    -5.416760000272975
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA NEGERI 10 BANDAR LAMPUNG",
+                "st_name": "JALAN JENDERAL GATOT SUBROTO",
+                "ph_number": null,
+                "Jenis": 1,
+                "Pemilik": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.27568000003298,
+                    -5.428730000088645
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMK MUHAMMADIYAH 1",
+                "st_name": "GANG MANYAR",
+                "ph_number": null,
+                "Jenis": 2,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.2507600001749,
+                    -5.425779999846327
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA KRISTEN PENABUR",
+                "st_name": "JALAN H. SAWO",
+                "ph_number": null,
+                "Jenis": 1,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.26997000021636,
+                    -5.418499999574535
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA BINA MULYA",
+                "st_name": null,
+                "ph_number": null,
+                "Jenis": 1,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.25484000036676,
+                    -5.395279999871259
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMK KRIDA WISATA",
+                "st_name": "GANG PRAJURIT",
+                "ph_number": null,
+                "Jenis": 2,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.28469000004452,
+                    -5.392489999812812
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA NEGERI 07 BANDAR LAMPUNG",
+                "st_name": "JALAN KI MOCH SALIM",
+                "ph_number": null,
+                "Jenis": 1,
+                "Pemilik": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.29673000039026,
+                    -5.438769999934724
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMK YAGSMI",
+                "st_name": "JALAN HAJI SAHID 2",
+                "ph_number": null,
+                "Jenis": 2,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.27604000044668,
+                    -5.417830000153583
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMK PGRI 1",
+                "st_name": null,
+                "ph_number": null,
+                "Jenis": 2,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.27752000034876,
+                    -5.407429999893792
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA YP PAHLAWAN",
+                "st_name": "JALAN PAHLAWAN",
+                "ph_number": "721-71275",
+                "Jenis": 1,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.26316000003499,
+                    -5.398299999744401
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA ARJUNA",
+                "st_name": "JALAN TULANG BAWANG",
+                "ph_number": null,
+                "Jenis": 1,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.26170999971777,
+                    -5.417979999876311
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMK ARJUNA",
+                "st_name": "JALAN TULANG BAWANG",
+                "ph_number": null,
+                "Jenis": 2,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.26170999971777,
+                    -5.417979999876311
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMK NEGERI 4 BANDAR LAMPUNG",
+                "st_name": "JALAN HOS COKROAMINOTO",
+                "ph_number": "721-261637",
+                "Jenis": 2,
+                "Pemilik": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.26260000029082,
+                    -5.423490000362395
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "MAWAR SARON SCHOOL",
+                "st_name": "GANG ASTRA",
+                "ph_number": null,
+                "Jenis": 4,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.28547000004151,
+                    -5.408390000097607
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMK BINTARA",
+                "st_name": "GANG ANGGREK",
+                "ph_number": null,
+                "Jenis": 2,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.25035000015345,
+                    -5.398549999582036
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "TK YURIDESMA SARI",
+                "st_name": "JALAN DANAU TOWUTI",
+                "ph_number": null,
+                "Jenis": 4,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.26529000023436,
+                    -5.391430000393372
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA MUHAMMADIYAH 1",
+                "st_name": "GANG MANYAR",
+                "ph_number": null,
+                "Jenis": 1,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.2507600001749,
+                    -5.425779999846327
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA UTAMA 3",
+                "st_name": "JALAN JENDERAL SUDIRMAN",
+                "ph_number": "721-252254",
+                "Jenis": 1,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.26474000005196,
+                    -5.422610000250534
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMK UTAMA",
+                "st_name": "JALAN JENDERAL SUDIRMAN",
+                "ph_number": null,
+                "Jenis": 2,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.26474000005196,
+                    -5.422610000250534
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA UTAMA BANDAR LAMPUNG",
+                "st_name": "JALAN JENDERAL SUDIRMAN",
+                "ph_number": "721-252253",
+                "Jenis": 1,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.26492999982065,
+                    -5.422610000250534
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA NEGERI 1 BANDAR LAMPUNG",
+                "st_name": "JALAN JENDERAL SUDIRMAN",
+                "ph_number": "721-252190",
+                "Jenis": 1,
+                "Pemilik": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.26517999965829,
+                    -5.422630000273501
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMK ISLAM FAJAR MULYA ISLAM",
+                "st_name": "JALAN MAYJEN RIYACUDU",
+                "ph_number": "721-7488976",
+                "Jenis": 2,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.32512999975074,
+                    -5.420130000098609
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "MA NEGERI 2 TANJUNGKARANG",
+                "st_name": "JALAN JENDERAL GATOT SUBROTO",
+                "ph_number": null,
+                "Jenis": 3,
+                "Pemilik": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.2800599996703,
+                    -5.43460000008912
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA SRIWIJAYA",
+                "st_name": null,
+                "ph_number": null,
+                "Jenis": 1,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.26730999985762,
+                    -5.380359999813321
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMK TRISAKTI BANDAR LAMPUNG",
+                "st_name": null,
+                "ph_number": "721-263915",
+                "Jenis": 2,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.24858999992959,
+                    -5.417299999994216
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA NUSANTARA",
+                "st_name": "JALAN GELATIK",
+                "ph_number": null,
+                "Jenis": 1,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.26878000019786,
+                    -5.412490000312463
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "MA MATHLAUL ANWAR",
+                "st_name": "GANG FAMILY 1",
+                "ph_number": null,
+                "Jenis": 3,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.2528100002823,
+                    -5.370440000105143
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMK NEGERI 5 BANDAR LAMPUNG",
+                "st_name": "JALAN PANGERAN TIRTAYASA",
+                "ph_number": "721-350870",
+                "Jenis": 2,
+                "Pemilik": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.30599000023938,
+                    -5.399139999810367
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA ADIGUNA",
+                "st_name": "JALAN CHAIRIL ANWAR",
+                "ph_number": null,
+                "Jenis": 1,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.24509999996604,
+                    -5.419900000283978
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMK PGRI 2",
+                "st_name": "JALAN CHAIRIL ANWAR",
+                "ph_number": null,
+                "Jenis": 2,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.24509999996604,
+                    -5.419900000283978
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA PERINTIS 1",
+                "st_name": null,
+                "ph_number": null,
+                "Jenis": 1,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.24727000021136,
+                    -5.41769999955454
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "MA MASYARIQUL ANWAR",
+                "st_name": "JALAN CHAIRIL ANWAR",
+                "ph_number": null,
+                "Jenis": 3,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.24355999999504,
+                    -5.421440000255018
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMK NEGERI 2 BANDAR LAMPUNG",
+                "st_name": "JALAN PROF DR SUMANTRI BOJONEGORO",
+                "ph_number": "721-701966",
+                "Jenis": 2,
+                "Pemilik": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.2454499999186,
+                    -5.363790000107601
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA AL-AZHAR 3",
+                "st_name": null,
+                "ph_number": null,
+                "Jenis": 1,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.27104000009693,
+                    -5.379040000095128
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMK NEGERI 1",
+                "st_name": null,
+                "ph_number": "721-252910",
+                "Jenis": 2,
+                "Pemilik": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.26658999992956,
+                    -5.421619999562496
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "STM BHAKTI UTAMA",
+                "st_name": "JALAN PANGLIMA POLIM",
+                "ph_number": "721-704503",
+                "Jenis": 4,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.24934999990359,
+                    -5.386980000225998
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMK NEGERI 6 BANDAR LAMPUNG",
+                "st_name": "JALAN LAKSAMANA R E MARTADINATA",
+                "ph_number": null,
+                "Jenis": 2,
+                "Pemilik": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.2450199998741,
+                    -5.472220000152046
+                ]
+            }
+        }
+    ]
+}

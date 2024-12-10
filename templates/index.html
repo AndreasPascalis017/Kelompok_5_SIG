@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemetaan SMA Negeri Bandar Lampung</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" rel="stylesheet" />
+    <style>
+        #map { height: 500px; }
+    </style>
+</head>
+<body>
+    <h1>Pemetaan Lokasi SMA Negeri di Bandar Lampung</h1>
+    <div id="map"></div>
+
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZGltYXMxMjExNDAwNTkiLCJhIjoiY200aWdhenc0MDI0MDJ3cHRraWJiZDlwYSJ9.VdL957h0QQf-wgoec9yaCA';
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [105.2663, -5.3965],  // Koordinat pusat Bandar Lampung
+            zoom: 12
+        });
+
+        // Memuat GeoJSON
+        fetch('/geojson')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);  // Cek data GeoJSON di console
+                map.on('load', function () {
+                    map.addSource('school-locations', {
+                        type: 'geojson',
+                        data: data
+                    });
+
+                    // Menambahkan layer GeoJSON untuk marker
+                    map.addLayer({
+                        id: 'school-locations-layer',
+                        type: 'circle',
+                        source: 'school-locations',
+                        paint: {
+                            'circle-radius': 6,
+                            'circle-color': '#007cbf'
+                        }
+                    });
+
+                    // Menambahkan popup saat marker diklik
+                    map.on('click', 'school-locations-layer', function (e) {
+                        var coordinates = e.lngLat;
+                        var properties = e.features[0].properties; // Mendapatkan properti dari fitur yang diklik
+
+                        var popupContent = `<strong>${properties.poi_name}</strong><br>${properties.st_name || 'Alamat tidak tersedia'}`;
+
+                        new mapboxgl.Popup()
+                            .setLngLat(coordinates)
+                            .setHTML(popupContent)
+                            .addTo(map);
+                    });
+
+                    // Menambahkan interaksi hover untuk cursor
+                    map.on('mouseenter', 'school-locations-layer', function () {
+                        map.getCanvas().style.cursor = 'pointer';
+                    });
+
+                    map.on('mouseleave', 'school-locations-layer', function () {
+                        map.getCanvas().style.cursor = '';
+                    });
+                });
+            })
+            .catch(error => console.error('Error loading GeoJSON:', error));
+    </script>
+</body>
+</html>

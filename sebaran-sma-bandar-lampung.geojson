@@ -10,23 +10,6 @@
         {
             "type": "Feature",
             "properties": {
-                "poi_name": "SMA NEGERI 12 BANDAR LAMPUNG",
-                "st_name": null,
-                "ph_number": null,
-                "Jenis": 1,
-                "Pemilik": 2
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    105.31034000029183,
-                    -5.3780199998223
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
                 "poi_name": "SMK 2 MEI",
                 "st_name": null,
                 "ph_number": null,
@@ -198,7 +181,7 @@
             "type": "Feature",
             "properties": {
                 "poi_name": "SMA NEGERI 9 BANDAR LAMPUNG",
-                "st_name": null,
+                "st_name": "JALAN PANGLIMA POLIM",
                 "ph_number": "721-772924",
                 "Jenis": 1,
                 "Pemilik": 2
@@ -300,7 +283,7 @@
             "type": "Feature",
             "properties": {
                 "poi_name": "SMA NEGERI 14 BANDAR LAMPUNG",
-                "st_name": null,
+                "st_name": "JALAN PERUM BUKIT KEMILING PERMAI",
                 "ph_number": null,
                 "Jenis": 1,
                 "Pemilik": 2
@@ -316,7 +299,7 @@
         {
             "type": "Feature",
             "properties": {
-                "poi_name": "SMA NEGERI 06 BANDAR LAMPUNG",
+                "poi_name": "SMA NEGERI 03 BANDAR LAMPUNG",
                 "st_name": "JALAN CHAIRIL ANWAR",
                 "ph_number": null,
                 "Jenis": 1,
@@ -385,7 +368,7 @@
             "type": "Feature",
             "properties": {
                 "poi_name": "SMA NEGERI 2 BANDAR LAMPUNG",
-                "st_name": null,
+                "st_name": "JALAN AMIR HAMZAH 1 No.01",
                 "ph_number": null,
                 "Jenis": 1,
                 "Pemilik": 2
@@ -436,7 +419,7 @@
             "type": "Feature",
             "properties": {
                 "poi_name": "SMA NEGERI 12 BANDAR LAMPUNG",
-                "st_name": null,
+                "st_name": "JALAN HI. ENDRO SURATMIN",
                 "ph_number": null,
                 "Jenis": 1,
                 "Pemilik": 2
@@ -521,7 +504,7 @@
             "type": "Feature",
             "properties": {
                 "poi_name": "SMA NEGERI 8 BANDAR LAMPUNG",
-                "st_name": null,
+                "st_name": "JALAN LAKSAMANA MALAHAYATI",
                 "ph_number": "721-484453",
                 "Jenis": 1,
                 "Pemilik": 2
@@ -1030,7 +1013,7 @@
         {
             "type": "Feature",
             "properties": {
-                "poi_name": "SMA NEGERI 07 BANDAR LAMPUNG",
+                "poi_name": "SMA NEGERI 06 BANDAR LAMPUNG",
                 "st_name": "JALAN KI MOCH SALIM",
                 "ph_number": null,
                 "Jenis": 1,
@@ -1551,6 +1534,40 @@
                 "coordinates": [
                     105.2450199998741,
                     -5.472220000152046
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA NEGERI 16 BANDAR LAMPUNG",
+                "st_name": "JALAN DARUSSALAM",
+                "ph_number": null,
+                "Jenis": 4,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.2293,
+                    -5.4024
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "poi_name": "SMA NEGERI 17 BANDAR LAMPUNG",
+                "st_name": "JALAN SOEKARNO HATTA",
+                "ph_number": null,
+                "Jenis": 4,
+                "Pemilik": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.3250,
+                    -5.4634
                 ]
             }
         }

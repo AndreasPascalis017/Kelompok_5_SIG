@@ -1,30 +1,44 @@
 from flask import Flask, render_template, request, jsonify
-import psycopg2
 import json
+from geopy.distance import geodesic
 
 app = Flask(__name__)
 
-# Koneksi ke database PostgreSQL dengan nama 'tubes_sig'
-def get_db_connection():
-    conn = psycopg2.connect(
-        dbname='tubes_sig',  # Nama database
-        user='ddima',  # Ganti dengan username PostgreSQL Anda
-        password='200345',  # Ganti dengan password PostgreSQL Anda
-        host='localhost',  # Host database
-        port='5432'  # Port default PostgreSQL
-    )
-    return conn
-
-# Endpoint untuk mengirimkan GeoJSON ke frontend
 @app.route('/geojson')
 def geojson():
-    with open('sebaran-sma-bandar-lampung.geojson') as f:
-        data = json.load(f)
-    return jsonify(data)
+    try:
+        with open('sebaran-sma-bandar-lampung.geojson') as f:
+            data = json.load(f)
+
+        # Mendapatkan data jarak dan probabilitas untuk setiap sekolah
+        user_lat = -5.397  # Koordinat rumah user, bisa diganti dengan data dinamis
+        user_lon = 105.268
+        max_distance = 10  # Maksimum jarak dalam kilometer
+
+        for feature in data['features']:
+            if 'SMA Negeri' in feature['properties']['poi_name']:  # Filter hanya SMA Negeri
+                school_lat = feature['geometry']['coordinates'][1]
+                school_lon = feature['geometry']['coordinates'][0]
+
+                # Hitung jarak dengan Geopy
+                distance = geodesic((user_lat, user_lon), (school_lat, school_lon)).kilometers
+
+                if distance <= max_distance:
+                    distance_score = max(0, 1 - (distance / max_distance))
+                    # Menambahkan data jarak dan probabilitas
+                    feature['properties']['distance'] = round(distance, 2)
+                    feature['properties']['probability'] = round((distance_score) * 100, 2)
+
+        return jsonify(data)
+
+    except FileNotFoundError:
+        return jsonify({"error": "File GeoJSON tidak ditemukan."}), 404
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 @app.route('/')
 def index():
-    return render_template('index.html')  # Halaman utama aplikasi
+    return render_template('index.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

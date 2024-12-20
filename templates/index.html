@@ -9,67 +9,172 @@
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"></script>
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" rel="stylesheet" />
     <style>
-        #map { height: 500px; }
-        #zone-results {
-            margin-top: 20px;
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
         }
+
+        header {
+            background-color: #007cbf;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        header .logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        #map {
+            height: 500px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .controls button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .controls #add-location-btn {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .controls #move-location-btn {
+            background-color: #FF9800;
+            color: white;
+        }
+
+        .controls button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        #zone-results {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #zone-results h2 {
+            margin-top: 0;
+            color: #007cbf;
+        }
+
         #zone-list {
             list-style-type: none;
             padding: 0;
+            margin: 0;
         }
+
         #zone-list li {
-            margin: 5px 0;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
             background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+            transition: transform 0.2s, background-color 0.3s;
         }
-        #add-location-btn, #move-location-btn {
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #4CAF50;
+
+        #zone-list li:hover {
+            transform: scale(1.02);
+            background-color: #e9f5ff;
+        }
+
+        footer {
+            background-color: #007cbf;
             color: white;
-            border: none;
-            cursor: pointer;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
         }
-        #add-location-btn:disabled, #move-location-btn:disabled {
-            background-color: #ccc;
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
-    <h1>Jarak Zonasi SMA Negeri di Bandar Lampung</h1>
-    <button id="add-location-btn">Tambah Lokasi Rumah</button>
-    <button id="move-location-btn" disabled>Memindahkan Lokasi Rumah</button>
-    <div id="map"></div>
-    <div id="zone-results">
-        <h2>SMA Negeri Terdekat</h2>
-        <ul id="zone-list"></ul>
-    </div>
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo" class="logo">
+            <h1>Pemetaan SMA Negeri di Bandar Lampung</h1>
+        </div>
+    </header>
+    <main>
+        <div class="controls">
+            <button id="add-location-btn">Tambah Lokasi Rumah</button>
+            <button id="move-location-btn" disabled>Memindahkan Lokasi Rumah</button>
+        </div>
+        <div id="map"></div>
+        <div id="zone-results">
+            <h2>SMA Negeri Terdekat</h2>
+            <ul id="zone-list"></ul>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Pemetaan SMA Negeri Bandar Lampung</p>
+    </footer>
 
+
+    
     <script>
         mapboxgl.accessToken = 'pk.eyJ1IjoiZGltYXMxMjExNDAwNTkiLCJhIjoiY200aWdhenc0MDI0MDJ3cHRraWJiZDlwYSJ9.VdL957h0QQf-wgoec9yaCA';
 
-        // Inisialisasi Peta
         var map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/streets-v11',
-            center: [105.2663, -5.3965],  // Koordinat pusat Bandar Lampung
+            center: [105.2663, -5.3965],
             zoom: 12
         });
 
         var userLat = null;
         var userLon = null;
         var isAddingLocation = false;
-        var homeMarker = null; // Menyimpan marker lokasi rumah
+        var homeMarker = null;
 
-        // Fungsi untuk menambahkan marker lokasi rumah
         function addHomeMarker(lat, lon) {
-            if (homeMarker) {
-                homeMarker.remove(); // Menghapus marker lama jika ada
-            }
+            if (homeMarker) homeMarker.remove();
 
-            homeMarker = new mapboxgl.Marker({ color: 'red' }) // Marker berwarna merah
+            homeMarker = new mapboxgl.Marker({ color: 'red' })
                 .setLngLat([lon, lat])
                 .setPopup(
                     new mapboxgl.Popup().setHTML(`
@@ -80,20 +185,17 @@
                 .addTo(map);
         }
 
-        // Fungsi untuk menghitung jarak antara dua koordinat (Haversine formula)
         function calculateDistance(lat1, lon1, lat2, lon2) {
-            const R = 6371; // Radius bumi dalam kilometer
+            const R = 6371;
             const dLat = (lat2 - lat1) * Math.PI / 180;
             const dLon = (lon2 - lon1) * Math.PI / 180;
             const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
                       Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
                       Math.sin(dLon / 2) * Math.sin(dLon / 2);
             const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-            const distance = R * c; // Jarak dalam kilometer
-            return distance;
+            return R * c;
         }
 
-        // Fungsi untuk menampilkan daftar SMA Negeri terdekat
         function displayNearestSchools(smaNegeriFeatures, userLat, userLon) {
             const schoolsWithDistance = smaNegeriFeatures.map(school => {
                 const schoolLat = school.geometry.coordinates[1];
@@ -118,7 +220,6 @@
             });
         }
 
-        // Memuat GeoJSON dan menambahkan SMA Negeri ke peta
         fetch('/geojson')
             .then(response => response.json())
             .then(data => {
@@ -162,7 +263,6 @@
                                 .addTo(map);
                         });
 
-                        // Menangani hover pada marker SMA Negeri
                         map.on('mouseenter', 'school-locations-layer', function () {
                             map.getCanvas().style.cursor = 'pointer';
                         });
@@ -171,19 +271,16 @@
                             map.getCanvas().style.cursor = '';
                         });
 
-                        // Menunggu user untuk memilih lokasi rumah hanya jika tombol aktif
                         map.on('click', function (e) {
                             if (isAddingLocation) {
                                 userLat = e.lngLat.lat;
                                 userLon = e.lngLat.lng;
                                 addHomeMarker(userLat, userLon);
-
-                                // Setelah lokasi rumah ditambahkan, tampilkan daftar SMA Negeri terdekat
                                 displayNearestSchools(smaNegeriFeatures, userLat, userLon);
                                 document.getElementById('zone-results').style.display = 'block';
-                                document.getElementById('add-location-btn').disabled = true; // Menonaktifkan tombol tambah lokasi
-                                document.getElementById('move-location-btn').disabled = false; // Mengaktifkan tombol pindah lokasi
-                                isAddingLocation = false; // Menonaktifkan mode penambahan setelah selesai
+                                document.getElementById('add-location-btn').disabled = true;
+                                document.getElementById('move-location-btn').disabled = false;
+                                isAddingLocation = false;
                             }
                         });
                     }
@@ -191,22 +288,18 @@
             })
             .catch(error => console.error('Error loading GeoJSON:', error));
 
-        // Aktifkan mode penambahan lokasi rumah
         document.getElementById('add-location-btn').addEventListener('click', function () {
-            // Cek apakah sudah ada lokasi yang ditambahkan, jika belum, aktifkan mode penambahan lokasi
             if (!isAddingLocation && !homeMarker) {
                 isAddingLocation = true;
-                this.disabled = true; // Menonaktifkan tombol selama proses penambahan lokasi
+                this.disabled = true;
                 alert('Klik pada peta untuk menambahkan lokasi rumah');
             }
         });
 
-        // Memindahkan lokasi rumah
         document.getElementById('move-location-btn').addEventListener('click', function () {
-            // Mengaktifkan kembali mode penambahan lokasi
             isAddingLocation = true;
-            document.getElementById('add-location-btn').disabled = false; // Mengaktifkan tombol tambah lokasi
-            this.disabled = true; // Menonaktifkan tombol pindah lokasi sementara
+            document.getElementById('add-location-btn').disabled = false;
+            this.disabled = true;
             alert('Klik pada peta untuk memindahkan lokasi rumah');
         });
     </script>

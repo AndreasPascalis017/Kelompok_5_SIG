@@ -4,17 +4,14 @@ from geopy.distance import geodesic
 
 app = Flask(__name__)
 
-@app.route('/geojson', methods=['POST'])
+@app.route('/geojson')
 def geojson():
     try:
-        # Ambil data lat dan lon dari request
-        user_lat = request.json.get('user_lat')
-        user_lon = request.json.get('user_lon')
-
-        # Membaca file GeoJSON
         with open('sebaran-sma-bandar-lampung.geojson') as f:
             data = json.load(f)
 
+        user_lat = -5.397  # Koordinat rumah user, bisa diganti dengan data dinamis
+        user_lon = 105.268
         max_distance = 10  # Maksimum jarak dalam kilometer
 
         for feature in data['features']:
@@ -27,12 +24,13 @@ def geojson():
 
                 if distance <= max_distance:
                     distance_score = max(0, 1 - (distance / max_distance))
-                    # Menambahkan data jarak dan probabilitas
                     feature['properties']['distance'] = round(distance, 2)
                     feature['properties']['probability'] = round((distance_score) * 100, 2)
 
         return jsonify(data)
 
+    except FileNotFoundError:
+        return jsonify({"error": "File GeoJSON tidak ditemukan."}), 404
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 

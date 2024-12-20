@@ -24,24 +24,24 @@
             border-radius: 5px;
             background-color: #f9f9f9;
         }
+        #add-location-btn, #move-location-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #add-location-btn:disabled, #move-location-btn:disabled {
+            background-color: #ccc;
+        }
     </style>
 </head>
 <body>
-    <h1>Pemetaan Lokasi SMA Negeri di Bandar Lampung</h1>
-
-    <!-- Form untuk mengubah lokasi -->
-    <div id="controls">
-        <label for="lat">Latitude:</label>
-        <input type="number" id="lat" value="-5.397" step="0.000001">
-        <label for="lon">Longitude:</label>
-        <input type="number" id="lon" value="105.268" step="0.000001">
-        <button id="update-location">Update Lokasi</button>
-    </div>
-
-    <!-- Div untuk peta -->
+    <h1>Jarak Zonasi SMA Negeri di Bandar Lampung</h1>
+    <button id="add-location-btn">Tambah Lokasi Rumah</button>
+    <button id="move-location-btn" disabled>Memindahkan Lokasi Rumah</button>
     <div id="map"></div>
-
-    <!-- Hasil pencarian sekolah -->
     <div id="zone-results">
         <h2>SMA Negeri Terdekat</h2>
         <ul id="zone-list"></ul>
@@ -50,36 +50,32 @@
     <script>
         mapboxgl.accessToken = 'pk.eyJ1IjoiZGltYXMxMjExNDAwNTkiLCJhIjoiY200aWdhenc0MDI0MDJ3cHRraWJiZDlwYSJ9.VdL957h0QQf-wgoec9yaCA';
 
-        let map;
-        let userLat = parseFloat(document.getElementById('lat').value);
-        let userLon = parseFloat(document.getElementById('lon').value);
-
-        // Variabel untuk menyimpan marker lokasi pengguna
-        let userMarker;
-        let schoolLayer;
-
         // Inisialisasi Peta
-        function initializeMap() {
-            map = new mapboxgl.Map({
-                container: 'map',
-                style: 'mapbox://styles/mapbox/streets-v11',
-                center: [userLon, userLat],
-                zoom: 12
-            });
-        }
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [105.2663, -5.3965],  // Koordinat pusat Bandar Lampung
+            zoom: 12
+        });
 
-        // Fungsi untuk menambahkan atau memperbarui marker lokasi rumah
-        function updateUserMarker(lat, lon) {
-            if (userMarker) {
-                // Hapus marker lama
-                userMarker.remove();
+        var userLat = null;
+        var userLon = null;
+        var isAddingLocation = false;
+        var homeMarker = null; // Menyimpan marker lokasi rumah
+
+        // Fungsi untuk menambahkan marker lokasi rumah
+        function addHomeMarker(lat, lon) {
+            if (homeMarker) {
+                homeMarker.remove(); // Menghapus marker lama jika ada
             }
 
-            // Tambahkan marker baru
-            userMarker = new mapboxgl.Marker({ color: 'red' })
+            homeMarker = new mapboxgl.Marker({ color: 'red' }) // Marker berwarna merah
                 .setLngLat([lon, lat])
                 .setPopup(
-                    new mapboxgl.Popup().setHTML(`<strong>Lokasi Rumah Anda</strong><br>Koordinat: (${lat.toFixed(6)}, ${lon.toFixed(6)})`)
+                    new mapboxgl.Popup().setHTML(`
+                        <strong>Lokasi Rumah Anda</strong><br>
+                        Koordinat: (${lat.toFixed(6)}, ${lon.toFixed(6)})
+                    `)
                 )
                 .addTo(map);
         }
@@ -97,38 +93,8 @@
             return distance;
         }
 
-        // Fungsi untuk mengirim lokasi pengguna ke server Flask
-        function updateLocationToServer(lat, lon) {
-            fetch('/geojson', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    user_lat: lat,
-                    user_lon: lon
-                })
-            })
-            .then(response => response.json())
-            .then(data => {
-                // Update data GeoJSON dan tampilkan SMA terdekat
-                updateMap(data);
-            })
-            .catch(error => console.error('Error:', error));
-        }
-
-        // Fungsi untuk memperbarui peta dan daftar SMA terdekat
-        function updateMap(data) {
-            // Hapus layer lama jika ada
-            if (schoolLayer) {
-                map.removeLayer('school-locations-layer');
-                map.removeSource('school-locations');
-            }
-
-            const smaNegeriFeatures = data.features.filter(feature => 
-                feature.properties.poi_name && feature.properties.poi_name.toLowerCase().includes('sma negeri')
-            );
-
+        // Fungsi untuk menampilkan daftar SMA Negeri terdekat
+        function displayNearestSchools(smaNegeriFeatures, userLat, userLon) {
             const schoolsWithDistance = smaNegeriFeatures.map(school => {
                 const schoolLat = school.geometry.coordinates[1];
                 const schoolLon = school.geometry.coordinates[0];
@@ -137,11 +103,10 @@
             });
 
             schoolsWithDistance.sort((a, b) => a.distance - b.distance);
-
             const nearestSchools = schoolsWithDistance.slice(0, 5);
 
             const zoneList = document.getElementById('zone-list');
-            zoneList.innerHTML = ''; // Kosongkan daftar
+            zoneList.innerHTML = '';
             nearestSchools.forEach(school => {
                 const li = document.createElement('li');
                 li.innerHTML = `
@@ -151,42 +116,99 @@
                 `;
                 zoneList.appendChild(li);
             });
-
-            // Menambahkan SMA ke peta
-            map.addSource('school-locations', {
-                type: 'geojson',
-                data: {
-                    type: 'FeatureCollection',
-                    features: smaNegeriFeatures
-                }
-            });
-
-            map.addLayer({
-                id: 'school-locations-layer',
-                type: 'circle',
-                source: 'school-locations',
-                paint: {
-                    'circle-radius': 6,
-                    'circle-color': '#007cbf'
-                }
-            });
         }
 
-        // Event listener untuk memperbarui lokasi
-        document.getElementById('update-location').addEventListener('click', () => {
-            userLat = parseFloat(document.getElementById('lat').value);
-            userLon = parseFloat(document.getElementById('lon').value);
+        // Memuat GeoJSON dan menambahkan SMA Negeri ke peta
+        fetch('/geojson')
+            .then(response => response.json())
+            .then(data => {
+                map.on('load', function () {
+                    const smaNegeriFeatures = data.features.filter(feature => 
+                        feature.properties.poi_name && 
+                        feature.properties.poi_name.toLowerCase().includes('sma negeri')
+                    );
 
-            // Kirimkan lokasi pengguna ke server
-            updateLocationToServer(userLat, userLon);
+                    if (smaNegeriFeatures.length > 0) {
+                        map.addSource('school-locations', {
+                            type: 'geojson',
+                            data: {
+                                type: 'FeatureCollection',
+                                features: smaNegeriFeatures
+                            }
+                        });
 
-            // Perbarui marker pengguna di peta
-            updateUserMarker(userLat, userLon);
+                        map.addLayer({
+                            id: 'school-locations-layer',
+                            type: 'circle',
+                            source: 'school-locations',
+                            paint: {
+                                'circle-radius': 6,
+                                'circle-color': '#007cbf'
+                            }
+                        });
+
+                        map.on('click', 'school-locations-layer', function (e) {
+                            const coordinates = e.lngLat;
+                            const properties = e.features[0].properties;
+                            const popupContent = `
+                                <strong>${properties.poi_name}</strong><br>
+                                Alamat: ${properties.st_name || 'Alamat tidak tersedia'}<br>
+                                Jarak ke sekolah: ${userLat && userLon ? calculateDistance(userLat, userLon, e.features[0].geometry.coordinates[1], e.features[0].geometry.coordinates[0]).toFixed(2) : 'Tidak diketahui'} km<br>
+                            `;
+
+                            new mapboxgl.Popup()
+                                .setLngLat(coordinates)
+                                .setHTML(popupContent)
+                                .addTo(map);
+                        });
+
+                        // Menangani hover pada marker SMA Negeri
+                        map.on('mouseenter', 'school-locations-layer', function () {
+                            map.getCanvas().style.cursor = 'pointer';
+                        });
+
+                        map.on('mouseleave', 'school-locations-layer', function () {
+                            map.getCanvas().style.cursor = '';
+                        });
+
+                        // Menunggu user untuk memilih lokasi rumah hanya jika tombol aktif
+                        map.on('click', function (e) {
+                            if (isAddingLocation) {
+                                userLat = e.lngLat.lat;
+                                userLon = e.lngLat.lng;
+                                addHomeMarker(userLat, userLon);
+
+                                // Setelah lokasi rumah ditambahkan, tampilkan daftar SMA Negeri terdekat
+                                displayNearestSchools(smaNegeriFeatures, userLat, userLon);
+                                document.getElementById('zone-results').style.display = 'block';
+                                document.getElementById('add-location-btn').disabled = true; // Menonaktifkan tombol tambah lokasi
+                                document.getElementById('move-location-btn').disabled = false; // Mengaktifkan tombol pindah lokasi
+                                isAddingLocation = false; // Menonaktifkan mode penambahan setelah selesai
+                            }
+                        });
+                    }
+                });
+            })
+            .catch(error => console.error('Error loading GeoJSON:', error));
+
+        // Aktifkan mode penambahan lokasi rumah
+        document.getElementById('add-location-btn').addEventListener('click', function () {
+            // Cek apakah sudah ada lokasi yang ditambahkan, jika belum, aktifkan mode penambahan lokasi
+            if (!isAddingLocation && !homeMarker) {
+                isAddingLocation = true;
+                this.disabled = true; // Menonaktifkan tombol selama proses penambahan lokasi
+                alert('Klik pada peta untuk menambahkan lokasi rumah');
+            }
         });
 
-        // Inisialisasi awal
-        initializeMap();
-        updateUserMarker(userLat, userLon);
+        // Memindahkan lokasi rumah
+        document.getElementById('move-location-btn').addEventListener('click', function () {
+            // Mengaktifkan kembali mode penambahan lokasi
+            isAddingLocation = true;
+            document.getElementById('add-location-btn').disabled = false; // Mengaktifkan tombol tambah lokasi
+            this.disabled = true; // Menonaktifkan tombol pindah lokasi sementara
+            alert('Klik pada peta untuk memindahkan lokasi rumah');
+        });
     </script>
 </body>
 </html>

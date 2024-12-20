@@ -27,7 +27,7 @@ Proyek ini adalah aplikasi berbasis web yang membantu pengguna menentukan jarak 
 
 ## **Cara Penggunaan**
 
-1. Jalankan aplikasi web dengan menjalankan file Python utama (misalnya: `app.py`).
+1. Jalankan aplikasi web dengan menjalankan file Python utama `app.py`.
 2. Setelah aplikasi berjalan, buka browser dan akses URL yang ditampilkan.
 3. Pada halaman web, Anda akan melihat peta interaktif yang menampilkan lokasi SMA Negeri di Bandar Lampung.
 4. Masukkan koordinat lokasi Anda secara manual.
@@ -69,12 +69,6 @@ Pastikan Anda memiliki Python dan `pip` yang sudah diinstal pada sistem Anda.
 - `app.py`: Skrip utama untuk menjalankan aplikasi web.
 - `templates/index.html`: Template HTML untuk antarmuka pengguna.
 - `sebaran-sma-bandar-lampung.geojson`: File GeoJSON yang berisi data lokasi SMA Negeri di Kota Bandar Lampung.
-
----
-
-## **Kontribusi**
-
-Jika Anda ingin berkontribusi, silakan ajukan pull request atau buka issue baru di halaman repositori kami. Semua kontribusi dipersilakan untuk meningkatkan kualitas proyek ini!
 
 ---
 

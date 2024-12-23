@@ -25,7 +25,6 @@ def geojson():
                 if distance <= max_distance:
                     distance_score = max(0, 1 - (distance / max_distance))
                     feature['properties']['distance'] = round(distance, 2)
-                    feature['properties']['probability'] = round((distance_score) * 100, 2)
 
         return jsonify(data)
 
